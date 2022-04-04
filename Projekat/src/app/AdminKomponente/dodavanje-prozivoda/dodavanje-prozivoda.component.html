@@ -1,0 +1,70 @@
+<app-admin-navbar></app-admin-navbar>
+<br>
+<br>
+<br>
+
+<div class="float-container">
+
+    <div class="float-child">
+        <div class="container">
+            <div class="d-flex justify-content-center h-100">
+                <div class="card1">
+                    <div class="card-header">
+                        <h3>Dodaj jelo</h3>				
+                    </div>
+                    <div class="card-body">
+                        <form  [formGroup]="jeloForm">
+                            <div class="input-group form-group">
+                                <input type="text" class="form-control" formControlName="name" placeholder="Naziv jela">	
+                            </div>
+                            <div class="input-group form-group">
+                                <input type="number" class="form-control" formControlName="price" placeholder="Cijena" min="100">	
+                            </div>
+                            <div class="input-group form-group">
+                                <input type="text"  class="form-control" formControlName="dishes" placeholder="Sastojci">	
+                            </div>
+                            <div class="form-group">
+                                <button (click) = "onSubmit()" class="btn float-right login_btn"> Dodaj</button>
+                            </div>
+                        </form>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="float-child">
+        <ul>
+            <li *ngFor="let item of Lista">
+                <br>
+                <div class="container">
+                    <div class="d-flex justify-content-center h-100">
+                        <div class="card">
+                                <div class="card-body">
+                                        <div class="input-group form-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"> Naziv jela </span>
+                                            </div>
+                                            <span class="input-group-text"> {{item.jelo}} </span>
+                                        </div>
+                                        <div class="input-group form-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"> Cijena </span>
+                                            </div>
+                                            <span class="input-group-text"> {{item.cijena}} </span>
+                                        </div>
+                                        <div class="input-group form-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"> Sastojci </span>
+                                            </div>
+                                            <span class="input-group-text"  > {{item.sastojci}} </span>
+                                        </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+          </ul>
+    
+  </div>

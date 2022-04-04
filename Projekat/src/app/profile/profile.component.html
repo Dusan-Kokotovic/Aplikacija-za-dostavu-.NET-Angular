@@ -30,45 +30,59 @@
 <div class="container">
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
-			<div class="card-header">
-				<h3>Change profile</h3>				
-			</div>
-			<div class="card-body">
-				<form  [formGroup]="profileForm">
-					<div class="input-group form-group">
-                        <div class="input-group-prepend">
-							<span class="input-group-text"> Name </span>
+				<div class="card-header">
+					<h3>Change profile</h3>				
+				</div>
+				<div class="card-body">
+					<form  [formGroup]="profileForm">
+						<div class="d-flex flex-column align-items-center text-center p-3 py-5"><img style="border-radius:30%;"  width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"></div>
+
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"> Name </span>
+							</div>
+							<input [(ngModel)] = "ime" value={{ime}} type="text" class="form-control" formControlName="name" >	
 						</div>
-						<input [(ngModel)] = "ime" value={{ime}} type="text" class="form-control" formControlName="name" >	
-					</div>
-					<div class="input-group form-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text"> Last name </span>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"> Last name </span>
+							</div>
+							<input [(ngModel)] = "prezime" value={{prezime}} type="text" class="form-control" formControlName="lastname" >	
 						</div>
-                        <input [(ngModel)] = "prezime" value={{prezime}} type="text" class="form-control" formControlName="lastname" >	
-					</div>
-					<div class="input-group form-group">
-                        <div class="input-group-prepend">
-							<span class="input-group-text"> Username </span>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"> Adress </span>
+							</div>
+							<input [(ngModel)] = "adresa" value={{adresa}} type="text" class="form-control" formControlName="adress" >	
 						</div>
-						<input [(ngModel)] = "user" type="text" class="form-control" formControlName="username" value={{user}} >	
-					</div>
-                    <div class="input-group form-group">
-                        <div class="input-group-prepend">
-							<span class="input-group-text"> Email </span>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"> Birthday </span>
+							</div>
+							<input [(ngModel)] = "datum" value={{datum}} type="date" class="form-control" formControlName="date" >	
 						</div>
-						<input [(ngModel)] = "gmail" value={{gmail}} type="text" class="form-control" formControlName="gmail" >	
-					</div>
-					<div class="form-group">
-                        <button (click) = "onSubmit()" class="btn float-right login_btn"> Apply</button>
-					</div>
-				</form>
-			</div>
-			<div class="card-footer">
-				<div class="d-flex justify-content-center links">
-				<a style="color: darkturquoise;" href="/password">Change password</a>
-				</div>				
-			</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"> Username </span>
+							</div>
+							<input [(ngModel)] = "user" type="text" class="form-control" formControlName="username" value={{user}} >	
+						</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"> Email </span>
+							</div>
+							<input [(ngModel)] = "gmail" value={{gmail}} type="text" class="form-control" formControlName="gmail" >	
+						</div>
+						<div class="form-group">
+							<button (click) = "onSubmit()" class="btn float-right login_btn"> Apply</button>
+						</div>
+					</form>
+				</div>
+				<div class="card-footer">
+					<div class="d-flex justify-content-center links">
+					<a style="color: darkturquoise;" href="/password">Change password</a>
+					</div>				
+				</div>
 		</div>
 	</div>
 </div>

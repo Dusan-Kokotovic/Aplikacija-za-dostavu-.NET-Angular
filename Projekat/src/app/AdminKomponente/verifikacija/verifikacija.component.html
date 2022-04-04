@@ -1,0 +1,49 @@
+<app-admin-navbar></app-admin-navbar>
+
+<ul>
+    <li *ngFor="let item of Lista">
+        <br>
+        <div class="container">
+            <div class="d-flex justify-content-center h-100">
+                <div class="card">
+                        <div class="card-body">
+                                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img style="border-radius:30%;"  width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"></div>
+                                <div class="input-group form-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> Name </span>
+                                    </div>
+                                    <span class="input-group-text"> {{item.name}} </span>
+                                </div>
+                                <div class="input-group form-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> Lastanme </span>
+                                    </div>
+                                    <span class="input-group-text"> {{item.lastName}} </span>
+                                </div>
+                                <div class="input-group form-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> Username </span>
+                                    </div>
+                                    <span class="input-group-text"> {{item.username}} </span>
+                                </div>
+                                <div class="input-group form-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> Adress </span>
+                                    </div>
+                                    <span class="input-group-text"> {{item.adress}} </span>
+                                </div>
+                                <div class="input-group form-group" *ngIf="item.status === 'aktivan'">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> Status </span>
+                                    </div>
+                                    <span class="input-group-text"> {{item.status | uppercase}} </span>
+                                </div>
+                                <div *ngIf="item.status === 'cekanje'">	
+                                        <button (click) = "onSubmit(item.username)" class="btn float-none login_btn"> Accept</button>
+                                </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </li>
+  </ul>

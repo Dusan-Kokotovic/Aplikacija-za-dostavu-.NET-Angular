@@ -15,12 +15,18 @@ height: 100%;
 align-content: center;
 }
 
+.profile img {
+    height: 80px;
+    width: 80px;
+    margin-top: 2px
+}
+
 .card{
-height: 500px;
-margin-top: auto;
-margin-bottom: auto;
-width: 400px;
-background-color: rgba(0,0,0,0.5) !important;
+    height: 900px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 450px;
+    background-color: rgba(0,0,0,0.5) !important;
 }
 
 .social_icon span{

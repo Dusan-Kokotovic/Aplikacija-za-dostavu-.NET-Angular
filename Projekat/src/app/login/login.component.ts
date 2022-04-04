@@ -17,6 +17,10 @@ export class LoginComponent implements OnInit {
   });
 
 
+  u1 : string = "dulek99";
+  p1 : string = "123";
+  r1 : string = "admin";
+  
   constructor(private router: Router) { }
 
   ngOnInit(): void {
@@ -27,11 +31,28 @@ export class LoginComponent implements OnInit {
 
     if(this.loginForm.valid)
     {
-      let login:Login = new Login();
-      login.username = this.loginForm.controls["username"].value;
-      login.password = this.loginForm.controls["password"].value;
-      console.log(login);
-      this.router.navigateByUrl('/home');
+      if(this.u1 === this.loginForm.controls["username"].value && this.p1 === this.loginForm.controls["password"].value)
+      {
+        let login:Login = new Login();
+        login.username = this.loginForm.controls["username"].value;
+        login.password = this.loginForm.controls["password"].value;
+        console.log(login);
+        if(this.r1 === "admin"){
+          this.router.navigateByUrl('/adminhome');
+        }
+        else if (this.r1 === "dostavljac"){
+          this.router.navigateByUrl('/dostavljachome');
+        }
+        else if(this.r1 === "potrosac"){
+          this.router.navigateByUrl('/potrosachome');
+        }
+      }
+      else
+      {
+        alert("Pogresan username ili password")
+
+      }
+      
     }
     else
     {

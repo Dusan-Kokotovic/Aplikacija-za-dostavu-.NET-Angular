@@ -9,6 +9,15 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import { PasswordComponent } from './password/password.component';
+import { AdminHomeComponent } from './AdminKomponente/admin-home/admin-home.component';
+import { DodavanjeProzivodaComponent } from './AdminKomponente/dodavanje-prozivoda/dodavanje-prozivoda.component';
+import { SvePorudzbineComponent } from './AdminKomponente/sve-porudzbine/sve-porudzbine.component';
+import { VerifikacijaComponent } from './AdminKomponente/verifikacija/verifikacija.component';
+import { DostavljacHomeComponent } from './DostavljacKomponente/dostavljac-home/dostavljac-home.component';
+import { MojePorudzbineComponent } from './DostavljacKomponente/moje-porudzbine/moje-porudzbine.component';
+import { PotrosacHomeComponent } from './PotrosacKomponente/potrosac-home/potrosac-home.component';
+import { PrethodnePorudzbineComponent } from './PotrosacKomponente/prethodne-porudzbine/prethodne-porudzbine.component';
+import { AdminNavbarComponent } from './AdminKomponente/admin-navbar/admin-navbar.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +26,16 @@ import { PasswordComponent } from './password/password.component';
     HomeComponent,
     RegisterComponent,
     ProfileComponent,
-    PasswordComponent
+    PasswordComponent,
+    AdminHomeComponent,
+    DodavanjeProzivodaComponent,
+    SvePorudzbineComponent,
+    VerifikacijaComponent,
+    DostavljacHomeComponent,
+    MojePorudzbineComponent,
+    PotrosacHomeComponent,
+    PrethodnePorudzbineComponent,
+    AdminNavbarComponent
   ],
   imports: [
     BrowserModule,

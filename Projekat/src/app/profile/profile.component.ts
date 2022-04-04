@@ -12,12 +12,16 @@ export class ProfileComponent implements OnInit {
   ime : string =  "Dusan";
   prezime : string = "Kokotovic";
   user : string = "duledule";
+  adresa : string = "Filipa Filipovica 11";
+  datum : string = new Date().toISOString().split('T')[0];
   gmail : string = "kokotovicc@gmail.com"
 
   profileForm = new FormGroup({
     name : new FormControl("", Validators.required),
     lastname : new FormControl("", Validators.required),
     username : new FormControl("", Validators.required),
+    date : new FormControl("", Validators.required),
+    adress : new FormControl("", Validators.required),
     gmail : new FormControl("",
     [ 
     Validators.required,
@@ -38,6 +42,8 @@ export class ProfileComponent implements OnInit {
     register.lastName = this.profileForm.controls["lastname"].value;
     register.username = this.profileForm.controls["username"].value;
     register.gmail = this.profileForm.controls["gmail"].value;
+    register.adress = this.profileForm.controls["adress"].value;
+    register.date = this.profileForm.controls["date"].value;
     register.password = "niksta";
     console.log(register);
     }

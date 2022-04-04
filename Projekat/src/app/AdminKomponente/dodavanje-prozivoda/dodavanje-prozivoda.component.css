@@ -13,15 +13,29 @@ font-family: 'Numans', sans-serif;
 .container{
 height: 100%;
 align-content: center;
+align-self: left;
+
+}
+.input-group-text{
+    width: 300px;
 }
 
 .card{
-height: 800px;
+height: 200px;
 margin-top: auto;
 margin-bottom: auto;
 width: 450px;
 background-color: rgba(0,0,0,0.5) !important;
 }
+
+
+.card1{
+    height: 300px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 450px;
+    background-color: rgba(0,0,0,0.5) !important;
+    }
 
 .social_icon span{
 font-size: 60px;
@@ -87,3 +101,13 @@ color: white;
 .links a{
 margin-left: 4px;
 }
+
+.float-container {
+    padding: 20px;
+}
+
+.float-child {
+    width: 50%;
+    float: left;
+    padding: 20px;
+}  

@@ -16,6 +16,8 @@ export class RegisterComponent implements OnInit {
     username : new FormControl("", Validators.required),
     password : new FormControl("", Validators.required),
     confirmpassword : new FormControl("", Validators.required),
+    date : new FormControl("", Validators.required),
+    adress : new FormControl("", Validators.required),
     gmail : new FormControl("",
     [ 
     Validators.required,
@@ -42,6 +44,8 @@ export class RegisterComponent implements OnInit {
       register.username = this.registerForm.controls["username"].value;
       register.gmail = this.registerForm.controls["gmail"].value;
       register.password = this.registerForm.controls["password"].value;
+      register.adress = this.registerForm.controls["adress"].value;
+      register.date = this.registerForm.controls["date"].value;
       console.log(register);
       this.router.navigateByUrl('/login');
     }
