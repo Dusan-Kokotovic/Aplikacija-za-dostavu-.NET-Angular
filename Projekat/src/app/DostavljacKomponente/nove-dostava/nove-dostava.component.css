@@ -13,21 +13,29 @@ font-family: 'Numans', sans-serif;
 .container{
 height: 100%;
 align-content: center;
-}
+align-self: left;
 
-.profile img {
-    height: 80px;
-    width: 80px;
-    margin-top: 2px
+}
+.input-group-text{
+    width: 300px;
 }
 
 .card{
-    height: 950px;
+height: 400px;
+margin-top: auto;
+margin-bottom: auto;
+width: 450px;
+background-color: rgba(0,0,0,0.5) !important;
+}
+
+
+.card1{
+    height: 300px;
     margin-top: auto;
     margin-bottom: auto;
     width: 450px;
     background-color: rgba(0,0,0,0.5) !important;
-}
+    }
 
 .social_icon span{
 font-size: 60px;
@@ -51,7 +59,7 @@ top: -45px;
 }
 
 .input-group-prepend span{
-width: 50px;
+width: 100px;
 background-color: #FFC312;
 color: black;
 border:0 !important;
@@ -93,3 +101,26 @@ color: white;
 .links a{
 margin-left: 4px;
 }
+
+.float-container {
+    padding: 20px;
+}
+
+.input-group-text{
+    width: 400px;
+}
+
+.float-child {
+    width: 50%;
+    float: left;
+    padding: 20px;
+}  
+.float-container {
+    padding: 20px;
+}
+
+.float-child {
+    width: 50%;
+    float: left;
+    padding: 20px;
+} 

@@ -18,6 +18,7 @@ export class RegisterComponent implements OnInit {
     confirmpassword : new FormControl("", Validators.required),
     date : new FormControl("", Validators.required),
     adress : new FormControl("", Validators.required),
+    role : new FormControl("", Validators.required),
     gmail : new FormControl("",
     [ 
     Validators.required,
@@ -46,6 +47,7 @@ export class RegisterComponent implements OnInit {
       register.password = this.registerForm.controls["password"].value;
       register.adress = this.registerForm.controls["adress"].value;
       register.date = this.registerForm.controls["date"].value;
+      register.role = this.registerForm.controls["role"].value;
       console.log(register);
       this.router.navigateByUrl('/login');
     }

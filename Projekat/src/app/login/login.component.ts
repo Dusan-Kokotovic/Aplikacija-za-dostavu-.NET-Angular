@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
 
   u1 : string = "dulek99";
   p1 : string = "123";
-  r1 : string = "admin";
+  r1 : string = "dostavljac";
   
   constructor(private router: Router) { }
 

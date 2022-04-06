@@ -7,4 +7,5 @@ export class Registration{
     adress : string = "";
     date : Date = new Date();
     status : string = "";
+    role : string = "";
 }

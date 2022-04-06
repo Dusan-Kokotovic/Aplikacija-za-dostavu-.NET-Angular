@@ -15,6 +15,7 @@ export class ProfileComponent implements OnInit {
   adresa : string = "Filipa Filipovica 11";
   datum : string = new Date().toISOString().split('T')[0];
   gmail : string = "kokotovicc@gmail.com"
+  role : string = "Dostavljac";
 
   profileForm = new FormGroup({
     name : new FormControl("", Validators.required),
@@ -45,6 +46,7 @@ export class ProfileComponent implements OnInit {
     register.adress = this.profileForm.controls["adress"].value;
     register.date = this.profileForm.controls["date"].value;
     register.password = "niksta";
+    register.role = this.role;
     console.log(register);
     }
     else{

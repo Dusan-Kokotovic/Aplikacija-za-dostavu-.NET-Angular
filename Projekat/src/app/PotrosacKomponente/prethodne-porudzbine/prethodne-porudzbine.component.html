@@ -1,1 +1,57 @@
-<p>prethodne-porudzbine works!</p>
+<app-potrosac-navbar></app-potrosac-navbar>
+
+<br>
+<br>
+<br>
+
+<div class="float-container">
+        <ul>
+            <li *ngFor="let item of prikaz">
+                <br>
+                <div class="container">
+                    <div class="d-flex justify-content-center h-100">
+                        <div class="card">
+                                <div class="card-body">
+                                        <div class="input-group form-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"> Hrana </span>
+                                            </div>
+                                            <span class="input-group-text"> {{item.hrana}} </span>
+                                        </div>
+                                        <div class="input-group form-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"> Kolicina </span>
+                                            </div>
+                                            <span class="input-group-text"> {{item.kolicina}} </span>
+                                        </div>
+                                        <div class="input-group form-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"> Adresa </span>
+                                            </div>
+                                            <span class="input-group-text"> {{item.adresa}} </span>
+                                        </div>
+                                        <div class="input-group form-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"> Cijena </span>
+                                            </div>
+                                            <span class="input-group-text"  > {{item.cijena}} </span>
+                                        </div>
+                                        <div class="input-group form-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"> Komentar </span>
+                                            </div>
+                                            <span class="input-group-text"  > {{item.komentar}} </span>
+                                        </div>
+                                        <div class="input-group form-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"> Status </span>
+                                            </div>
+                                            <span class="input-group-text"  > {{item.status}} </span>
+                                        </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+          </ul>
+</div>

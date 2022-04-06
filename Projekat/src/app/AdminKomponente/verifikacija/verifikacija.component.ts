@@ -12,14 +12,15 @@ import { Registration } from 'src/app/models/registration.model';
 export class VerifikacijaComponent implements OnInit {
 
   Lista: Registration[] = [
-    { username: "dule", name:"Dusan",lastName:"Kokotovic",adress:"Filipa Filipovica",password: "",gmail:"kokotovic@gmai.com", date:new Date(),status:"cekanje" },
-    { username: "mitar", name:"Dusan",lastName:"Kokotovic",adress:"Filipa Filipovica",password: "",gmail:"kokotovic@gmai.com", date:new Date(),status:"aktivan" },  
-    { username: "petar", name:"Dusan",lastName:"Kokotovic",adress:"Filipa Filipovica",password: "",gmail:"kokotovic@gmai.com", date:new Date(),status:"cekanje" },  
-    { username: "jovan", name:"Dusan",lastName:"Kokotovic",adress:"Filipa Filipovica",password: "",gmail:"kokotovic@gmai.com", date:new Date(),status:"aktivan" },  
-    { username: "stefan", name:"Dusan",lastName:"Kokotovic",adress:"Filipa Filipovica",password: "",gmail:"kokotovic@gmai.com", date:new Date(),status:"cekanje" },  
-    { username: "radan", name:"Dusan",lastName:"Kokotovic",adress:"Filipa Filipovica",password: "",gmail:"kokotovic@gmai.com", date:new Date(),status:"aktivan" }
+    { role:"dostavljac", username: "dule", name:"Dusan",lastName:"Kokotovic",adress:"Filipa Filipovica",password: "",gmail:"kokotovic@gmai.com", date:new Date(),status:"cekanje" },
+    {role:"dostavljac", username: "mitar", name:"Dusan",lastName:"Kokotovic",adress:"Filipa Filipovica",password: "",gmail:"kokotovic@gmai.com", date:new Date(),status:"aktivan" },  
+    {role:"dostavljac", username: "petar", name:"Dusan",lastName:"Kokotovic",adress:"Filipa Filipovica",password: "",gmail:"kokotovic@gmai.com", date:new Date(),status:"cekanje" },  
+    {role:"dostavljac", username: "jovan", name:"Dusan",lastName:"Kokotovic",adress:"Filipa Filipovica",password: "",gmail:"kokotovic@gmai.com", date:new Date(),status:"aktivan" },  
+    {role:"dostavljac", username: "stefan", name:"Dusan",lastName:"Kokotovic",adress:"Filipa Filipovica",password: "",gmail:"kokotovic@gmai.com", date:new Date(),status:"cekanje" },  
+    {role:"dostavljac", username: "radan", name:"Dusan",lastName:"Kokotovic",adress:"Filipa Filipovica",password: "",gmail:"kokotovic@gmai.com", date:new Date(),status:"aktivan" }
   ];
   
+
   verifyForm = new FormGroup({
     username : new FormControl("", Validators.required),
   });

@@ -1,5 +1,4 @@
 <app-dostavljac-navbar></app-dostavljac-navbar>
-
 <br>
 <br>
 <br>
@@ -48,6 +47,9 @@
                                             </div>
                                             <span class="input-group-text"  > {{item.status}} </span>
                                         </div>
+                                        <div>	
+                                            <button (click) = "onSubmit(item)" class="btn float-none login_btn"> Prihvati</button>
+                                        </div>
                                 </div>
                         </div>
                     </div>
@@ -55,4 +57,3 @@
             </li>
           </ul>
 </div>
-
