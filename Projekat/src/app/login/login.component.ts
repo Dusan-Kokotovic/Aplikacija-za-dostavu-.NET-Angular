@@ -20,12 +20,18 @@ export class LoginComponent implements OnInit {
   u1 : string = "dulek99";
   p1 : string = "123";
   r1 : string = "dostavljac";
+
+  userdata:any;
   
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  OnSignIn(){
+       
+
+  }
 
   onSubmit() {
 
