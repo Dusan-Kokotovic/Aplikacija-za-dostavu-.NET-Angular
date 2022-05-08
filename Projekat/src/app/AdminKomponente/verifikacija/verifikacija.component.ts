@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Registration } from 'src/app/models/registration.model';
+import { KorisnikService } from 'src/app/Services/korisnik.service';
 
 @Component({
   selector: 'app-verifikacija',
@@ -11,14 +13,7 @@ import { Registration } from 'src/app/models/registration.model';
 
 export class VerifikacijaComponent implements OnInit {
 
-  Lista: Registration[] = [
-    { role:"dostavljac", username: "dule", name:"Dusan",lastName:"Kokotovic",adress:"Filipa Filipovica",password: "",gmail:"kokotovic@gmai.com", date:new Date(),status:"cekanje" },
-    {role:"dostavljac", username: "mitar", name:"Dusan",lastName:"Kokotovic",adress:"Filipa Filipovica",password: "",gmail:"kokotovic@gmai.com", date:new Date(),status:"aktivan" },  
-    {role:"dostavljac", username: "petar", name:"Dusan",lastName:"Kokotovic",adress:"Filipa Filipovica",password: "",gmail:"kokotovic@gmai.com", date:new Date(),status:"cekanje" },  
-    {role:"dostavljac", username: "jovan", name:"Dusan",lastName:"Kokotovic",adress:"Filipa Filipovica",password: "",gmail:"kokotovic@gmai.com", date:new Date(),status:"aktivan" },  
-    {role:"dostavljac", username: "stefan", name:"Dusan",lastName:"Kokotovic",adress:"Filipa Filipovica",password: "",gmail:"kokotovic@gmai.com", date:new Date(),status:"cekanje" },  
-    {role:"dostavljac", username: "radan", name:"Dusan",lastName:"Kokotovic",adress:"Filipa Filipovica",password: "",gmail:"kokotovic@gmai.com", date:new Date(),status:"aktivan" }
-  ];
+  Lista: Registration[] = [];
   
 
   verifyForm = new FormGroup({
@@ -26,13 +21,22 @@ export class VerifikacijaComponent implements OnInit {
   });
 
 
-  constructor() { }
+  constructor(private router: Router,private service: KorisnikService) { }
 
   ngOnInit(): void {
+    this.service.getKorisnici().subscribe(
+      (data:Registration[]) =>{
+        this.Lista = data;
+     }
+    )
+    console.log(this.Lista);
   }
 
-  onSubmit(un:string){
+  onSubmit(un:Registration){
+    un.status = "Aktivan";
     console.log(un);
+    this.service.updateKorisnik(un).subscribe(
+    )
   }
 
 }

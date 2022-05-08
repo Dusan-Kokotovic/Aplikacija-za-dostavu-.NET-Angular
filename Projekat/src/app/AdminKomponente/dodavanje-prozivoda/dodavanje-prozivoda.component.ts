@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Jelo } from 'src/app/models/jelo.model';
+import { JeloService } from 'src/app/Services/jelo.service';
+
 
 @Component({
   selector: 'app-dodavanje-prozivoda',
   templateUrl: './dodavanje-prozivoda.component.html',
-  styleUrls: ['./dodavanje-prozivoda.component.css']
+  styleUrls: ['./dodavanje-prozivoda.component.css'],
+  providers:[JeloService]
 })
 export class DodavanjeProzivodaComponent implements OnInit {
 
@@ -17,24 +21,34 @@ export class DodavanjeProzivodaComponent implements OnInit {
     /*Validators.pattern(new RegExp("[a-zA-Z ]*"))*/]),
   });
 
-  Lista : Jelo[] = [
-    {jelo: "Pica",cijena:1000,sastojci:"tijesto,kecap,sir,sunka,origano"}
-  ]
+  Lista : Jelo[] = []
 
 
-  constructor() { }
+  constructor(private router: Router,private service: JeloService) { }
 
   ngOnInit(): void {
+    this.service.getJela().subscribe(
+      (data:Jelo[]) =>{
+         this.Lista = data;
+      }
+    )
   }
 
 
   onSubmit(){
+    console.log(this.Lista);
     if(this.jeloForm.valid){
     let novo = new Jelo()
-    novo.jelo = this.jeloForm.controls["name"].value;
+    novo.naziv = this.jeloForm.controls["name"].value;
     novo.sastojci = this.jeloForm.controls["dishes"].value;
     novo.cijena = this.jeloForm.controls["price"].value;
     this.Lista.push(novo);
+
+    this.service.dodajJelo(novo).subscribe(
+      (data:Jelo) =>{
+        // this.Lista = data;
+      }
+    )
     }
     else{
       alert("Neispravno popunjena forma")

@@ -1,11 +1,11 @@
 export class Porudzbina{
-    hrana:string = "";
-    kolicina:number = 0;
-    cijena:number = 0;
-    adresa:string = "";
-    komentar:string = "";
+    id:number = 0;
+    price:number = 0;
+    deliveryTime: Date = new Date();
+    articles:string = "";
+    adress:string = "";
     status:string = "";
-    dostavljac:string = "";
-    narucilac:string = "";
-    vrijeme: Date = new Date();
+    comment:string = "";
+    delivererId:number = 0;
+    clientId:number = 0;
 }

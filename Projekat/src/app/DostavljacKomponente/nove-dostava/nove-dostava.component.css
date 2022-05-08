@@ -21,7 +21,7 @@ align-self: left;
 }
 
 .card{
-height: 400px;
+height: 340px;
 margin-top: auto;
 margin-bottom: auto;
 width: 450px;
@@ -106,21 +106,8 @@ margin-left: 4px;
     padding: 20px;
 }
 
-.input-group-text{
-    width: 400px;
-}
-
 .float-child {
     width: 50%;
     float: left;
     padding: 20px;
 }  
-.float-container {
-    padding: 20px;
-}
-
-.float-child {
-    width: 50%;
-    float: left;
-    padding: 20px;
-} 

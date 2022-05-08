@@ -23,6 +23,11 @@ import { DostavljacNavbarComponent } from './DostavljacKomponente/dostavljac-nav
 import { NoveDostavaComponent } from './DostavljacKomponente/nove-dostava/nove-dostava.component';
 import { NovaNarudzbinaComponent } from './PotrosacKomponente/nova-narudzbina/nova-narudzbina.component';
 import { BrojcanikComponent } from './brojcanik/brojcanik.component';
+import { JeloService } from './Services/jelo.service';
+import { KorisnikService } from './Services/korisnik.service';
+import { PorudzbinaService } from './Services/porudzbina.service';
+import { HttpClientModule } from '@angular/common/http';
+import { TrenutnaPorudzbinaComponent } from './DostavljacKomponente/trenutna-porudzbina/trenutna-porudzbina.component';
 
 @NgModule({
   declarations: [
@@ -45,15 +50,21 @@ import { BrojcanikComponent } from './brojcanik/brojcanik.component';
     DostavljacNavbarComponent,
     NoveDostavaComponent,
     NovaNarudzbinaComponent,
-    BrojcanikComponent
+    BrojcanikComponent,
+    TrenutnaPorudzbinaComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    JeloService,
+    KorisnikService,
+    PorudzbinaService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

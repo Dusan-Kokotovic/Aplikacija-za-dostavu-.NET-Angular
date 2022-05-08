@@ -14,7 +14,7 @@ export class ProfileComponent implements OnInit {
   user : string = "duledule";
   adresa : string = "Filipa Filipovica 11";
   datum : string = new Date().toISOString().split('T')[0];
-  gmail : string = "kokotovicc@gmail.com"
+  email : string = "kokotovicc@gmail.com"
   role : string = "Dostavljac";
 
   profileForm = new FormGroup({
@@ -40,9 +40,9 @@ export class ProfileComponent implements OnInit {
     if(this.profileForm.valid){
     let register:Registration = new Registration();
     register.name = this.profileForm.controls["name"].value;
-    register.lastName = this.profileForm.controls["lastname"].value;
+    //register.lastName = this.profileForm.controls["lastname"].value;
     register.username = this.profileForm.controls["username"].value;
-    register.gmail = this.profileForm.controls["gmail"].value;
+    register.email = this.profileForm.controls["email"].value;
     register.adress = this.profileForm.controls["adress"].value;
     register.date = this.profileForm.controls["date"].value;
     register.password = "niksta";

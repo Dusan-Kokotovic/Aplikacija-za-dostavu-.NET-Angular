@@ -8,14 +8,7 @@ import { Porudzbina } from 'src/app/models/porudzbina.model';
 })
 export class PotrosacHomeComponent implements OnInit {
   
-  Lista: Porudzbina[] = [
-    {vrijeme : new Date(new Date().getTime() + 1*60000), dostavljac:"", narucilac:"dulek99", hrana:"Aloooo", kolicina:2,cijena:500,komentar:"kada dodje kurir da kaze Pomaze Bog",adresa:"Filipa Filipovica",status:"Dostavlja se"},
-    {vrijeme : new Date(new Date().getTime() + 2*60000),dostavljac:"", narucilac:"dulek99", hrana:"Capricosa", kolicina:2,cijena:500,komentar:"kada dodje kurir da kaze Pomaze Bog",adresa:"Filipa Filipovica",status:"Dostavlja se"},    
-    {vrijeme : new Date(new Date().getTime() - 5*60000),dostavljac:"", narucilac:"dulek99", hrana:"Capricosa", kolicina:2,cijena:500,komentar:"kada dodje kurir da kaze Pomaze Bog",adresa:"Filipa Filipovica",status:"Dostavlja se"},    
-    {vrijeme : new Date(new Date().getTime() - 5*60000),dostavljac:"", narucilac:"dulek99", hrana:"Capricosa", kolicina:2,cijena:500,komentar:"kada dodje kurir da kaze Pomaze Bog",adresa:"Filipa Filipovica",status:"Dostavlja se"},
-    {vrijeme : new Date,dostavljac:"", narucilac:"dulek99", hrana:"Capricosa", kolicina:2,cijena:500,komentar:"kada dodje kurir da kaze Pomaze Bog",adresa:"Filipa Filipovica",status:"Izvrseno"},
-    {vrijeme : new Date,dostavljac:"", narucilac:"dulek99", hrana:"Capricosa", kolicina:2,cijena:500,komentar:"kada dodje kurir da kaze Pomaze Bog",adresa:"Filipa Filipovica",status:"Izvrseno"}   
-   ];
+  Lista: Porudzbina[] = [];
    prikaz: Porudzbina[]= new Array()
 
   constructor() { }
@@ -23,7 +16,7 @@ export class PotrosacHomeComponent implements OnInit {
   ngOnInit(): void {
 
     this.Lista.forEach(element => {
-      if(element.vrijeme < new Date()){
+      if(element.deliveryTime < new Date()){
         element.status = "Izvrseno";
       }
       if(element.status === "Dostavlja se"){

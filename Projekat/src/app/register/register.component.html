@@ -4,7 +4,6 @@
 <br/>
 <br/>
 
-
 <div class="container">
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
@@ -14,14 +13,13 @@
 			<div class="card-body">
 				<form  [formGroup]="registerForm">
 
-					<div class="d-flex flex-column align-items-center text-center p-3 py-5"><img style="border-radius:30%;"  width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"></div>
-
-
-					<div class="input-group form-group">
-						<input type="text" class="form-control" formControlName="name" placeholder="First name">	
+					<div class="d-flex flex-column align-items-center text-center p-3 py-5">
+						<img style="border-radius:30%;"   width="150px" height="200" [src]="url">
+						<input type="file" (change)="onselectFile($event)">
 					</div>
+
 					<div class="input-group form-group">
-						<input type="text" class="form-control" formControlName="lastname" placeholder="Last name">	
+						<input type="text" class="form-control" formControlName="name" placeholder="Name">	
 					</div>
 					<div class="input-group form-group">
 						<input type="text" class="form-control" formControlName="username" placeholder="Username">	
@@ -33,7 +31,7 @@
 						<input type="text" class="form-control" formControlName="adress" placeholder="Adress">	
 					</div>
                     <div class="input-group form-group">
-						<input type="text" class="form-control" formControlName="gmail" placeholder="Email">	
+						<input type="text" class="form-control" formControlName="email" placeholder="Email">	
 					</div>
 					<div  class="input-group form-group">
 						<select class="form-control" formControlName="role" placeholder="Uloga">

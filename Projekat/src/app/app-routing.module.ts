@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { AdminHomeComponent } from './AdminKomponente/admin-home/admin-home.component';
 import { DodavanjeProzivodaComponent } from './AdminKomponente/dodavanje-prozivoda/dodavanje-prozivoda.component';
 import { SvePorudzbineComponent } from './AdminKomponente/sve-porudzbine/sve-porudzbine.component';
@@ -8,6 +9,7 @@ import { BrojcanikComponent } from './brojcanik/brojcanik.component';
 import { DostavljacHomeComponent } from './DostavljacKomponente/dostavljac-home/dostavljac-home.component';
 import { MojePorudzbineComponent } from './DostavljacKomponente/moje-porudzbine/moje-porudzbine.component';
 import { NoveDostavaComponent } from './DostavljacKomponente/nove-dostava/nove-dostava.component';
+import { TrenutnaPorudzbinaComponent } from './DostavljacKomponente/trenutna-porudzbina/trenutna-porudzbina.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { PasswordComponent } from './password/password.component';
@@ -34,7 +36,8 @@ const routes: Routes = [
   {path: 'novedostava', component: NoveDostavaComponent},
   {path: 'potrosachome', component: PotrosacHomeComponent},
   {path: 'nova', component: NovaNarudzbinaComponent},
-  {path: 'brojacanik', component: BrojcanikComponent}
+  {path: 'brojacanik', component: BrojcanikComponent},
+  {path: 'trenutna', component: TrenutnaPorudzbinaComponent}
 ];
 
 @NgModule({

@@ -50,7 +50,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"> Naziv jela </span>
                                             </div>
-                                            <span class="input-group-text"> {{item.jelo}} </span>
+                                            <span class="input-group-text"> {{item.naziv}} </span>
                                         </div>
                                         <div class="input-group form-group">
                                             <div class="input-group-prepend">
@@ -66,7 +66,7 @@
                                         </div>
                                         <form [formGroup]="kolicinaForm">
                                             <div class="input-group form-group">
-                                                <input type="number" class="form-control" min="1" formControlName="kolicina" placeholder="Kolicina">	
+                                                <input value="1" type="number" class="form-control" min="1" formControlName="kolicina">	
                                             </div>
                                             <div>
                                                 <button (click) = "Dodaj(item)" class="btn float-right login_btn"> Dodaj</button>
