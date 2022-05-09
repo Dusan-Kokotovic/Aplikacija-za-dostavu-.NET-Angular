@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zaYGoYcXH+7Wakq8CfgjLB33Sryu8UoNvKDyRnhsMDWmuLCqFIZWof1vJH13P7X/tbBwo0Ui2HRB4oI83HIqeg==",
+  "dgSpecHash": "tfyVJEQoGjR01et/8wKtbrDGKVg8ZOqzrRGiI/NPcGkpOB7TiUvL7I7GG896u0wyvNKLLfkAHdmQzKnd7zxVRQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kokot\\OneDrive\\Radna površina\\Bekend\\BusinessLayer\\BusinessLayer.csproj",
+  "projectFilePath": "C:\\Users\\kokot\\OneDrive\\Radna površina\\PUSGS\\Bekend\\BusinessLayer\\BusinessLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kokot\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\kokot\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

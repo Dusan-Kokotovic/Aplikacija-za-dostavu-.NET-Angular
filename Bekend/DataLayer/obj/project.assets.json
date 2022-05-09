@@ -1938,11 +1938,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kokot\\OneDrive\\Radna površina\\Bekend\\DataLayer\\DataLayer.csproj",
+      "projectUniqueName": "C:\\Users\\kokot\\OneDrive\\Radna površina\\PUSGS\\Bekend\\DataLayer\\DataLayer.csproj",
       "projectName": "DataLayer",
-      "projectPath": "C:\\Users\\kokot\\OneDrive\\Radna površina\\Bekend\\DataLayer\\DataLayer.csproj",
+      "projectPath": "C:\\Users\\kokot\\OneDrive\\Radna površina\\PUSGS\\Bekend\\DataLayer\\DataLayer.csproj",
       "packagesPath": "C:\\Users\\kokot\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kokot\\OneDrive\\Radna površina\\Bekend\\DataLayer\\obj\\",
+      "outputPath": "C:\\Users\\kokot\\OneDrive\\Radna površina\\PUSGS\\Bekend\\DataLayer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -1962,8 +1962,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\kokot\\OneDrive\\Radna površina\\Bekend\\Contracts\\Contracts.csproj": {
-              "projectPath": "C:\\Users\\kokot\\OneDrive\\Radna površina\\Bekend\\Contracts\\Contracts.csproj"
+            "C:\\Users\\kokot\\OneDrive\\Radna površina\\PUSGS\\Bekend\\Contracts\\Contracts.csproj": {
+              "projectPath": "C:\\Users\\kokot\\OneDrive\\Radna površina\\PUSGS\\Bekend\\Contracts\\Contracts.csproj"
             }
           }
         }

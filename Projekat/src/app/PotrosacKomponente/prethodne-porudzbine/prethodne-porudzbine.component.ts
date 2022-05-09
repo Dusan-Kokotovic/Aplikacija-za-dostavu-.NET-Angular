@@ -15,7 +15,7 @@ export class PrethodnePorudzbineComponent implements OnInit {
   constructor(private router: Router,private service: PorudzbinaService) {}
 
   ngOnInit(): void {
-    this.service.getPorudzbineKorisnika(2).subscribe(
+    this.service.getPorudzbineKorisnika(6).subscribe(
       (data:Porudzbina[]) =>{
         this.Lista = data;
      }

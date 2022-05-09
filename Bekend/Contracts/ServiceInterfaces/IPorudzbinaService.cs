@@ -10,6 +10,8 @@ namespace Contracts.ServiceInterfaces
     public interface IPorudzbinaService : ICrudInterface<PorudzbinaDto>
     {
         IEnumerable<PorudzbinaDto> GetPorudzbineKorisnika(int id);
+
+        IEnumerable<PorudzbinaDto> GetTekuce(int id);
         IEnumerable<PorudzbinaDto> GetPorudzbineZaDostavu();
         
         PorudzbinaDto Prihvati(int id, int porudzbina);

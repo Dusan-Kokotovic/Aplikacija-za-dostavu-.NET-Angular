@@ -37,7 +37,8 @@ namespace BusinessLayer
 
         public KorisnikDto GetById(long id)
         {
-            return MapKorisnikDto(_repository.GetById(id));
+            KorisnikDto kor = MapKorisnikDto(_repository.GetById(id));
+            return kor;//MapKorisnikDto(_repository.GetById(id));
         }
 
         public KorisnikDto Update(long id, KorisnikDto newModelData)
@@ -104,7 +105,7 @@ namespace BusinessLayer
                     Status = k.Status,
                     Token = k.Token,
                     Image = Encoding.Default.GetString(k.Image),
-                    Porudzbine = new List<Porudzbina>() //(k.Role == "Dostavljac") ? k.PorudzbineDostavljaca : k.PorudzbineKupca
+                    Porudzbine = new List<Porudzbina>() 
                 };
                 value.Add(korisnik);
             }

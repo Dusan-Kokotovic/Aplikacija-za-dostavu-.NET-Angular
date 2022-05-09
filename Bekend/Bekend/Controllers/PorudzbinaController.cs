@@ -43,6 +43,12 @@ namespace Bekend.Controllers
             return Ok(_porudzbinaService.GetPorudzbineZaDostavu());
         }
 
+        [HttpGet("TekuceDostave/{id}")]
+        public IActionResult GetTekuce(int id)
+        {
+            return Ok(_porudzbinaService.GetTekuce(id));
+        }
+
         // POST api/<PorudzbinaController>
         [HttpPost]
         public IActionResult Post([FromBody] PorudzbinaDto2 porudzbina)

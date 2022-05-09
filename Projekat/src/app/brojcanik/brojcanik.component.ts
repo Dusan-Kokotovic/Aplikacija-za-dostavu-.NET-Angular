@@ -11,9 +11,13 @@ export class BrojcanikComponent implements OnInit {
 
   @Input() childMessage: Date = new Date();
   demo:any;
+  countDate : Date = new Date();
   constructor() {}
   ngOnInit(): void {
-    var countDownDate  = this.childMessage.getTime();
+    this.countDate = this.childMessage;
+    var strDate = this.countDate.toString();
+    var countDownDate  = new Date(strDate).getTime();
+    console.log(countDownDate);
     var x = setInterval(() =>{
       var now = new Date().getTime();
       var distance = countDownDate - now;
@@ -23,9 +27,11 @@ export class BrojcanikComponent implements OnInit {
       if(minutes < 0 || seconds <0){
         minutes = 0;
         seconds = 0;
+        window.location.reload();
       }
       if(minutes === 0 && seconds === 0){
         clearInterval(x);
+        window.location.reload();
       }       
       }) 
   }

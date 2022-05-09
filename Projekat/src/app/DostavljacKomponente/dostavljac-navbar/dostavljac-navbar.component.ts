@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Registration } from 'src/app/models/registration.model';
+import { KorisnikService } from 'src/app/Services/korisnik.service';
 
 @Component({
   selector: 'app-dostavljac-navbar',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DostavljacNavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router,private service: KorisnikService) { }
 
+  korisnik : Registration = new Registration();
+  id : number = 7;
   ngOnInit(): void {
+    this.service.getKorisnik(this.id).subscribe(
+      (data:Registration) =>{
+        this.korisnik = data;
+      }
+    )
   }
 
 }

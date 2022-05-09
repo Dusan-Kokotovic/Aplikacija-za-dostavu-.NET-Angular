@@ -99,5 +99,11 @@ namespace BusinessLayer
             return value;
 
         }
+
+        public IEnumerable<PorudzbinaDto> GetTekuce(int id)
+        {
+            return _mapper.Map<IEnumerable<PorudzbinaDto>>(_repository.GetTekuce(id));
+
+        }
     }
 }

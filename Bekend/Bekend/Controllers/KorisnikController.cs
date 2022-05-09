@@ -29,6 +29,7 @@ namespace Bekend.Controllers
             return Ok(_korisnikService.GetById(id));
         }
 
+
         // POST api/<KorisnikController>
         [HttpPost]
         public IActionResult Post([FromBody] KorisnikDto korisnik)

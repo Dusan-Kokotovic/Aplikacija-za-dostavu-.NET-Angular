@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Porudzbina } from '../models/porudzbina.model';
 import { Registration } from '../models/registration.model';
+import { KorisnikService } from '../Services/korisnik.service';
 
 @Component({
   selector: 'app-profile',
@@ -9,48 +12,58 @@ import { Registration } from '../models/registration.model';
 })
 export class ProfileComponent implements OnInit {
 
-  ime : string =  "Dusan";
-  prezime : string = "Kokotovic";
-  user : string = "duledule";
-  adresa : string = "Filipa Filipovica 11";
-  datum : string = new Date().toISOString().split('T')[0];
-  email : string = "kokotovicc@gmail.com"
-  role : string = "Dostavljac";
-
   profileForm = new FormGroup({
     name : new FormControl("", Validators.required),
-    lastname : new FormControl("", Validators.required),
     username : new FormControl("", Validators.required),
     date : new FormControl("", Validators.required),
+    role : new FormControl("",Validators.required),
     adress : new FormControl("", Validators.required),
-    gmail : new FormControl("",
+    email : new FormControl("",
     [ 
     Validators.required,
     Validators.pattern(new RegExp("^([A-Za-z0-9_\\-\\.])+@gmail.com"))]
     )
   });
 
+  datum : string = "";
 
-  constructor() { }
+  korisnik : Registration = new Registration();
+
+  id : number = 7;
+
+  constructor(private router: Router,private service: KorisnikService) { }
 
   ngOnInit(): void {
+    this.service.getKorisnik(this.id).subscribe(
+      (data:Registration) =>{
+        this.korisnik = data;
+        this.datum = data.date.toString().split("T",1)[0];
+        console.log(this.korisnik)
+      }
+    )
+    
+  }
+
+  onselectFile(e:any){
+    if(e.target.files){
+      var reader = new FileReader();
+      reader.readAsDataURL(e.target.files[0]);
+      reader.onload=(event:any) => {
+        this.korisnik.image = event.target.result;
+      }
+    }
   }
 
   onSubmit(){
     if(this.profileForm.valid){
-    let register:Registration = new Registration();
-    register.name = this.profileForm.controls["name"].value;
-    //register.lastName = this.profileForm.controls["lastname"].value;
-    register.username = this.profileForm.controls["username"].value;
-    register.email = this.profileForm.controls["email"].value;
-    register.adress = this.profileForm.controls["adress"].value;
-    register.date = this.profileForm.controls["date"].value;
-    register.password = "niksta";
-    register.role = this.role;
-    console.log(register);
+    this.korisnik.date = new Date(this.datum);
+    this.korisnik.porudzbine = [];
+    this.service.updateKorisnik(this.korisnik).subscribe(
+      )
+
     }
     else{
-      alert("Pogresno popunjena polja");
+     alert("Pogresno popunjena polja");
     }
   }
 

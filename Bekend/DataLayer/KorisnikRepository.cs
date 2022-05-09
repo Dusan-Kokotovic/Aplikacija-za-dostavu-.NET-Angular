@@ -40,7 +40,19 @@ namespace DataLayer
 
         public Korisnik GetById(long id)
         {
-            return _dbContext.Korisnici.Find((int)id);
+            Korisnik kor = _dbContext.Korisnici.Find((int)id);
+            //List<Porudzbina> temp = _dbContext.Porudzbine.ToList();
+            //List<Porudzbina> porudzbine = new List<Porudzbina>();
+            //foreach (Porudzbina p in temp)
+            //{
+            //    if (p.ClientId == id || p.DelivererId == id)
+            //    {
+            //        porudzbine.Add(p);
+            //    }
+            //    kor.PorudzbineKupca = porudzbine;
+            //    kor.PorudzbineDostavljaca = porudzbine;
+            //}
+            return kor;
         }
 
         //public IEnumerable<Porudzbina> GetPorudzbine(int id)

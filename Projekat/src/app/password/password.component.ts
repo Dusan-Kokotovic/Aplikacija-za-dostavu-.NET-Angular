@@ -14,6 +14,7 @@ export class PasswordComponent implements OnInit {
     confirmpassword : new FormControl("", Validators.required)
   });
 
+  role = "Potrosac"
   oldPassword:string = "1234";
 
   constructor() { }

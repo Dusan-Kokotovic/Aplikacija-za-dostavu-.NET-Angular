@@ -1917,11 +1917,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kokot\\OneDrive\\Radna površina\\Bekend\\Contracts\\Contracts.csproj",
+      "projectUniqueName": "C:\\Users\\kokot\\OneDrive\\Radna površina\\PUSGS\\Bekend\\Contracts\\Contracts.csproj",
       "projectName": "Contracts",
-      "projectPath": "C:\\Users\\kokot\\OneDrive\\Radna površina\\Bekend\\Contracts\\Contracts.csproj",
+      "projectPath": "C:\\Users\\kokot\\OneDrive\\Radna površina\\PUSGS\\Bekend\\Contracts\\Contracts.csproj",
       "packagesPath": "C:\\Users\\kokot\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kokot\\OneDrive\\Radna površina\\Bekend\\Contracts\\obj\\",
+      "outputPath": "C:\\Users\\kokot\\OneDrive\\Radna površina\\PUSGS\\Bekend\\Contracts\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -1941,8 +1941,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\kokot\\OneDrive\\Radna površina\\Bekend\\Common\\Common.csproj": {
-              "projectPath": "C:\\Users\\kokot\\OneDrive\\Radna površina\\Bekend\\Common\\Common.csproj"
+            "C:\\Users\\kokot\\OneDrive\\Radna površina\\PUSGS\\Bekend\\Common\\Common.csproj": {
+              "projectPath": "C:\\Users\\kokot\\OneDrive\\Radna površina\\PUSGS\\Bekend\\Common\\Common.csproj"
             }
           }
         }

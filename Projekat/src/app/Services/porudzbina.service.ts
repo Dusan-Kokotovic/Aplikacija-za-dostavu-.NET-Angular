@@ -28,6 +28,10 @@ export class PorudzbinaService {
     return this.http.get<Porudzbina[]>(environment.serverURL + '/api/Porudzbina/Dostava');
   }
 
+  getTekucePorudzbine(id:number): Observable<Porudzbina[]> {
+    return this.http.get<Porudzbina[]>(environment.serverURL + '/api/Porudzbina/TekuceDostave/'+id);
+  }
+
   Prihvati(porudzbina:Porudzbina,id:number) : Observable<Porudzbina> {
     return this.http.put<Porudzbina>(environment.serverURL + '/api/Porudzbina/Prihvati/' +id ,porudzbina.id);
   }

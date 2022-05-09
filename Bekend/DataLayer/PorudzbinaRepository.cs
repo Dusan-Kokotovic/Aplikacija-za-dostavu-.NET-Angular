@@ -123,5 +123,24 @@ namespace DataLayer
             _dbContext.SaveChanges();
             return porudzbina;
         }
+
+        public IEnumerable<Porudzbina> GetTekuce(int id)
+        {
+            List<Porudzbina> porudzbine = _dbContext.Porudzbine.ToList();
+            List<Porudzbina> povratna = new List<Porudzbina>();
+            foreach (Porudzbina porudzbina in porudzbine)
+            {
+                if (porudzbina.DeliveryTime < DateTime.Now)
+                {
+                    porudzbina.Status = "Dostavljeno";
+                }
+                if ((porudzbina.ClientId == id || porudzbina.DelivererId == id) && porudzbina.Status == "Dostavlja se")
+                {
+                    povratna.Add(porudzbina);
+                }
+            }
+            _dbContext.SaveChanges();
+            return povratna;
+        }
     }
 }

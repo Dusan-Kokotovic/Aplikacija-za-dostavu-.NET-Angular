@@ -51,7 +51,7 @@ export class NovaNarudzbinaComponent implements OnInit {
   this.porudzbina.articles = this.namirnice;
   this.porudzbina.status = "Aktivna";
   this.porudzbina.comment = this.porudzbinaForm.controls["comment"].value;
-  this.porudzbina.clientId = 2;
+  this.porudzbina.clientId = 6;
   console.log(this.porudzbina);
   this.service2.addPorudzbina(this.porudzbina).subscribe(
     (data:Porudzbina) =>{}

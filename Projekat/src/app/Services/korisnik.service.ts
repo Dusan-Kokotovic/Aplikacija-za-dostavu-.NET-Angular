@@ -11,6 +11,10 @@ export class KorisnikService {
 
   constructor(private http: HttpClient) { }
 
+  getKorisnik(id:number) : Observable<Registration> {
+    return this.http.get<Registration>(environment.serverURL + '/api/Korisnik/'+id);
+  }
+
   getKorisnici() : Observable<Registration[]> {
     return this.http.get<Registration[]>(environment.serverURL + '/api/Korisnik');
   }

@@ -11,6 +11,10 @@ namespace Contracts.RepositoryInterfaces
     public interface IPorudzbinaRepository : ICrudInterface<Porudzbina>
     {
         IEnumerable<Porudzbina> GetPorudzbineKorisnika(int id);
+
+        IEnumerable<Porudzbina> GetTekuce(int id);
+
+
         IEnumerable<Porudzbina> GetPorudzbineZaDostavu();
 
         Porudzbina Prihvati(int id, int porudzbina);
