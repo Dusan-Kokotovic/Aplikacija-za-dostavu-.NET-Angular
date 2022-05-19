@@ -16,7 +16,7 @@ export class NoveDostavaComponent implements OnInit {
   Lista: Porudzbina[] = [];
   korisnik : Registration = new Registration();
   id : number = 7;
-  constructor(private router: Router,private service: PorudzbinaService) {}
+  constructor(private router: Router,private service: PorudzbinaService, private service2 : KorisnikService) {}
 
   ngOnInit(): void {
     this.service.getPorudzbineZaDostavu().subscribe(
@@ -26,9 +26,8 @@ export class NoveDostavaComponent implements OnInit {
     )
   }
 
-
   onSubmit(item:Porudzbina){
-    this.service.Prihvati(item,2).subscribe(
+    this.service.Prihvati(item,Number(localStorage.getItem('id'))).subscribe(
       (data:Porudzbina) =>{}
     )
     this.router.navigateByUrl('/trenutna');

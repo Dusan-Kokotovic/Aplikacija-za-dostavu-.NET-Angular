@@ -1,5 +1,6 @@
 ﻿using Common.Dto;
 using Contracts.ServiceInterfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -17,6 +18,7 @@ namespace Bekend.Controllers
         }
         // GET: api/<JeloController>
         [HttpGet]
+        [Authorize(Roles = "Admin,Potrosac")]
         public IActionResult Get()
         {
             return Ok(_jeloService.Get());
@@ -26,11 +28,12 @@ namespace Bekend.Controllers
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            return Ok(_jeloService.GetById(id));
+            return NotFound();
         }
 
         // POST api/<JeloController>
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public IActionResult Post([FromBody] JeloDto jelo)
         {
             return Ok(_jeloService.Add(jelo));
@@ -40,14 +43,14 @@ namespace Bekend.Controllers
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] JeloDto jelo)
         {
-            return Ok(_jeloService.Update(id,jelo));
+            return NotFound();
         }
 
         // DELETE api/<JeloController>/5
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            return Ok(_jeloService.Delete(id));
+            return NotFound();
         }
     }
 }

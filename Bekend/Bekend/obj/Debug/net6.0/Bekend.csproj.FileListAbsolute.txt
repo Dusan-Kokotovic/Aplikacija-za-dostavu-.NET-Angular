@@ -76,7 +76,10 @@ C:\Users\kokot\OneDrive\Radna površina\PUSGS\Bekend\Bekend\bin\Debug\net6.0\Bek
 C:\Users\kokot\OneDrive\Radna površina\PUSGS\Bekend\Bekend\bin\Debug\net6.0\Bekend.dll
 C:\Users\kokot\OneDrive\Radna površina\PUSGS\Bekend\Bekend\bin\Debug\net6.0\Bekend.pdb
 C:\Users\kokot\OneDrive\Radna površina\PUSGS\Bekend\Bekend\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\kokot\OneDrive\Radna površina\PUSGS\Bekend\Bekend\bin\Debug\net6.0\BCrypt.Net-Next.dll
 C:\Users\kokot\OneDrive\Radna površina\PUSGS\Bekend\Bekend\bin\Debug\net6.0\Humanizer.dll
+C:\Users\kokot\OneDrive\Radna površina\PUSGS\Bekend\Bekend\bin\Debug\net6.0\MailKit.dll
+C:\Users\kokot\OneDrive\Radna površina\PUSGS\Bekend\Bekend\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\kokot\OneDrive\Radna površina\PUSGS\Bekend\Bekend\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 C:\Users\kokot\OneDrive\Radna površina\PUSGS\Bekend\Bekend\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\kokot\OneDrive\Radna površina\PUSGS\Bekend\Bekend\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -92,6 +95,9 @@ C:\Users\kokot\OneDrive\Radna površina\PUSGS\Bekend\Bekend\bin\Debug\net6.0\Mic
 C:\Users\kokot\OneDrive\Radna površina\PUSGS\Bekend\Bekend\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\kokot\OneDrive\Radna površina\PUSGS\Bekend\Bekend\bin\Debug\net6.0\Microsoft.OpenApi.dll
 C:\Users\kokot\OneDrive\Radna površina\PUSGS\Bekend\Bekend\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\kokot\OneDrive\Radna površina\PUSGS\Bekend\Bekend\bin\Debug\net6.0\MimeKit.dll
+C:\Users\kokot\OneDrive\Radna površina\PUSGS\Bekend\Bekend\bin\Debug\net6.0\NETCore.MailKit.dll
+C:\Users\kokot\OneDrive\Radna površina\PUSGS\Bekend\Bekend\bin\Debug\net6.0\BouncyCastle.Crypto.dll
 C:\Users\kokot\OneDrive\Radna površina\PUSGS\Bekend\Bekend\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\kokot\OneDrive\Radna površina\PUSGS\Bekend\Bekend\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\kokot\OneDrive\Radna površina\PUSGS\Bekend\Bekend\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll

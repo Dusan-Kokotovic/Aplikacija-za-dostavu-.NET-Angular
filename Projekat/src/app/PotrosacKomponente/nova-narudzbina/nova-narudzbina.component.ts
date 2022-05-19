@@ -23,6 +23,7 @@ export class NovaNarudzbinaComponent implements OnInit {
   Lista : Jelo[] = []
 
   porudzbina: Porudzbina = new Porudzbina();
+  token : string = String(localStorage.getItem('token'));
 
   porudzbinaForm = new FormGroup({
     adress : new FormControl("", Validators.required),
@@ -37,7 +38,7 @@ export class NovaNarudzbinaComponent implements OnInit {
   });
 
   ngOnInit(): void {
-    this.service.getJela().subscribe(
+    this.service.getJela(this.token).subscribe(
       (data:Jelo[]) =>{
          this.Lista = data;
       }
@@ -51,7 +52,7 @@ export class NovaNarudzbinaComponent implements OnInit {
   this.porudzbina.articles = this.namirnice;
   this.porudzbina.status = "Aktivna";
   this.porudzbina.comment = this.porudzbinaForm.controls["comment"].value;
-  this.porudzbina.clientId = 6;
+  this.porudzbina.clientId = Number(localStorage.getItem('id'));
   console.log(this.porudzbina);
   this.service2.addPorudzbina(this.porudzbina).subscribe(
     (data:Porudzbina) =>{}

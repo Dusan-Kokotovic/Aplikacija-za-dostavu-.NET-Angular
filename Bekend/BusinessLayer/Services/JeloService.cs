@@ -22,7 +22,11 @@ namespace BusinessLayer
         }
         public JeloDto Add(JeloDto newModel)
         {
-           return _mapper.Map<JeloDto>(_repository.Add(_mapper.Map<Jelo>(newModel)));
+        if(newModel.Cijena > 0 && newModel.Naziv != null && newModel.Naziv != "" && newModel.Sastojci != null && newModel.Sastojci != "")
+        {
+            return _mapper.Map<JeloDto>(_repository.Add(_mapper.Map<Jelo>(newModel)));
+        }
+            return null;    
         }
 
         public JeloDto Delete(int id)

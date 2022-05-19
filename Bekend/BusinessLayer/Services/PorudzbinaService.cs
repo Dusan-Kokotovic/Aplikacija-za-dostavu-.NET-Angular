@@ -22,7 +22,11 @@ namespace BusinessLayer
         }
         public PorudzbinaDto Add(PorudzbinaDto newModel)
         {
-            return _mapper.Map<PorudzbinaDto>(_repository.Add(_mapper.Map<Porudzbina>(newModel)));
+            if(newModel.Status != "" && newModel.Adress != "" && newModel.Comment != "")
+            {
+                return _mapper.Map<PorudzbinaDto>(_repository.Add(_mapper.Map<Porudzbina>(newModel)));
+            }
+            return null;
         }
 
         public PorudzbinaDto Delete(int id)
@@ -47,7 +51,8 @@ namespace BusinessLayer
 
         public IEnumerable<PorudzbinaDto> GetPorudzbineZaDostavu()
         {
-            return _mapper.Map<IEnumerable<PorudzbinaDto>>(_repository.GetPorudzbineZaDostavu());
+            IEnumerable<Porudzbina> lista = _repository.GetPorudzbineZaDostavu();
+            return _mapper.Map<IEnumerable<PorudzbinaDto>>(lista);
         }
 
         public PorudzbinaDto Update(long id, PorudzbinaDto newModelData)
@@ -102,7 +107,8 @@ namespace BusinessLayer
 
         public IEnumerable<PorudzbinaDto> GetTekuce(int id)
         {
-            return _mapper.Map<IEnumerable<PorudzbinaDto>>(_repository.GetTekuce(id));
+            IEnumerable<Porudzbina> lista = _repository.GetTekuce(id);
+            return _mapper.Map<IEnumerable<PorudzbinaDto>>(lista);
 
         }
     }

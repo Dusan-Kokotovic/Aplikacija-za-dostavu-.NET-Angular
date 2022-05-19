@@ -9,5 +9,6 @@ namespace Contracts.RepositoryInterfaces
 {
     public interface IKorisnikRepository : ICrudInterface<Korisnik>
     {
+        Korisnik Prihvati(int id);
     }
 }

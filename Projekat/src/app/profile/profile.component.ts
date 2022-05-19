@@ -29,7 +29,7 @@ export class ProfileComponent implements OnInit {
 
   korisnik : Registration = new Registration();
 
-  id : number = 7;
+  id : number = Number(localStorage.getItem('id'));
 
   constructor(private router: Router,private service: KorisnikService) { }
 

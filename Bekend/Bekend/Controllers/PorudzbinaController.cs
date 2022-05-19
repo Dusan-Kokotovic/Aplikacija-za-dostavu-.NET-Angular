@@ -1,5 +1,6 @@
 ﻿using Common.Dto;
 using Contracts.ServiceInterfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
@@ -32,18 +33,21 @@ namespace Bekend.Controllers
 
 
         [HttpGet("Korisnik/{id}")]
+        [Authorize(Roles = "Potrosac,Dostavljac")]
         public IActionResult GetPorudzbineKorisnika(int id)
         {
             return Ok(_porudzbinaService.GetPorudzbineKorisnika(id));
         }
 
         [HttpGet("Dostava")]
+        [Authorize(Roles = "Dostavljac")]
         public IActionResult GetPorudzbineZaDostavu()
         {
             return Ok(_porudzbinaService.GetPorudzbineZaDostavu());
         }
 
         [HttpGet("TekuceDostave/{id}")]
+        [Authorize(Roles = "Potrosac,Dostavljac")]
         public IActionResult GetTekuce(int id)
         {
             return Ok(_porudzbinaService.GetTekuce(id));
@@ -51,6 +55,7 @@ namespace Bekend.Controllers
 
         // POST api/<PorudzbinaController>
         [HttpPost]
+        [Authorize(Roles = "Potrosac")]
         public IActionResult Post([FromBody] PorudzbinaDto2 porudzbina)
         {
             return Ok(_porudzbinaService.Add1(porudzbina));
@@ -64,6 +69,7 @@ namespace Bekend.Controllers
         }
 
         [HttpPut("Prihvati/{id}")]
+        [Authorize(Roles = "Dostavljac")]
         public IActionResult Prihvati(int id, [FromBody] int porudzbina)
         {
             return Ok(_porudzbinaService.Prihvati(id, porudzbina));
@@ -73,7 +79,7 @@ namespace Bekend.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            return Ok(_porudzbinaService.Delete(id));
+            return NotFound();
         }
     }
 }

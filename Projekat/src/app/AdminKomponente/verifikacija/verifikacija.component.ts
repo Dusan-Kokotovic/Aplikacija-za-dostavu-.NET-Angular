@@ -14,7 +14,7 @@ import { KorisnikService } from 'src/app/Services/korisnik.service';
 export class VerifikacijaComponent implements OnInit {
 
   Lista: Registration[] = [];
-  
+  korisnik : Registration = new Registration();
 
   verifyForm = new FormGroup({
     username : new FormControl("", Validators.required),
@@ -31,12 +31,35 @@ export class VerifikacijaComponent implements OnInit {
     )
     console.log(this.Lista);
   }
-
+  token : string = '';
   onSubmit(un:Registration){
-    un.status = "Aktivan";
-    console.log(un);
-    this.service.updateKorisnik(un).subscribe(
-    )
+    this.service.getKorisnik(un.id).subscribe(
+      (data:Registration) =>{
+        if(data.status === "Aktivan"){
+          alert("Korisnika je vec neko verifikovao")
+        }
+        else{
+          un.status = "Aktivan";
+          //this.token = JSON.parse(localStorage.getItem('token')!);
+          this.service.updateKorisnik(un).subscribe()
+          this.service.sendMail(un.email).subscribe()
+        }
+     }
+    )    
+  }
+
+  decline(un:Registration){
+    this.service.getKorisnik(un.id).subscribe(
+      (data:Registration) =>{
+        if(data.status === "Aktivan" || data.status ==="Odbijen"){
+          alert("Korisnika je vec neko verifikovao")
+        }
+        else{
+          un.status = "Odbijen";
+          this.service.updateKorisnik(un).subscribe()
+        }
+     }
+    )    
   }
 
 }

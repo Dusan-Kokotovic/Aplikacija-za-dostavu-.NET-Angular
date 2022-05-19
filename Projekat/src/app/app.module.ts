@@ -26,8 +26,9 @@ import { BrojcanikComponent } from './brojcanik/brojcanik.component';
 import { JeloService } from './Services/jelo.service';
 import { KorisnikService } from './Services/korisnik.service';
 import { PorudzbinaService } from './Services/porudzbina.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TrenutnaPorudzbinaComponent } from './DostavljacKomponente/trenutna-porudzbina/trenutna-porudzbina.component';
+import { TokenInterceptorService } from './token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,7 @@ import { TrenutnaPorudzbinaComponent } from './DostavljacKomponente/trenutna-por
     NoveDostavaComponent,
     NovaNarudzbinaComponent,
     BrojcanikComponent,
-    TrenutnaPorudzbinaComponent
+    TrenutnaPorudzbinaComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,7 +64,11 @@ import { TrenutnaPorudzbinaComponent } from './DostavljacKomponente/trenutna-por
   providers: [
     JeloService,
     KorisnikService,
-    PorudzbinaService
+    PorudzbinaService,{
+      provide : HTTP_INTERCEPTORS,
+      useClass : TokenInterceptorService,
+      multi : true
+    }
   ],
   bootstrap: [AppComponent]
 })

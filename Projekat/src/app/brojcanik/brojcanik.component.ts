@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Porudzbina } from '../models/porudzbina.model';
 import { PorudzbinaPrikaz } from '../models/porudzbinaprikaz.model';
+import { KorisnikService } from '../Services/korisnik.service';
 
 @Component({
   selector: 'app-brojcanik',
@@ -12,7 +14,7 @@ export class BrojcanikComponent implements OnInit {
   @Input() childMessage: Date = new Date();
   demo:any;
   countDate : Date = new Date();
-  constructor() {}
+  constructor(private router : Router) {}
   ngOnInit(): void {
     this.countDate = this.childMessage;
     var strDate = this.countDate.toString();
@@ -31,7 +33,12 @@ export class BrojcanikComponent implements OnInit {
       }
       if(minutes === 0 && seconds === 0){
         clearInterval(x);
-        window.location.reload();
+        if(localStorage.getItem('role') === "Dostavljac"){
+          this.router.navigateByUrl('/dostavljachome');
+        }
+        else{
+          this.router.navigateByUrl('/potrosachome');
+        }
       }       
       }) 
   }

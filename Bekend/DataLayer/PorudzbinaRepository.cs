@@ -79,6 +79,8 @@ namespace DataLayer
                 if(porudzbina.DeliveryTime < DateTime.Now)
                 {
                     porudzbina.Status = "Dostavljeno";
+                    //Korisnik k = _dbContext.Korisnici.Find(porudzbina.DelivererId);
+                    //k.Status = "Aktivan";
                 }
                 if (porudzbina.Status == "Aktivna")
                 {

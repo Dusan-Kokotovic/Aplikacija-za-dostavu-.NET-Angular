@@ -15,7 +15,7 @@ export class PotrosacHomeComponent implements OnInit {
   constructor(private router: Router,private service: PorudzbinaService) { }
 
   ngOnInit(): void {
-    this.service.getTekucePorudzbine(6).subscribe(
+    this.service.getTekucePorudzbine(Number(localStorage.getItem('id'))).subscribe(
       (data:Porudzbina[]) =>{
         this.Lista = data;
      }

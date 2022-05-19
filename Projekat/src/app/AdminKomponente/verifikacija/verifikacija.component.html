@@ -44,8 +44,15 @@
                                     </div>
                                     <span class="input-group-text"> {{item.status | uppercase}} </span>
                                 </div>
-                                <div *ngIf="item.status === 'Cekanje'">	
+                                <div class="input-group form-group" *ngIf="item.status === 'Odbijen'">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> Status </span>
+                                    </div>
+                                    <span class="input-group-text"> {{item.status | uppercase}} </span>
+                                </div>
+                                <div *ngIf="item.status === 'Na cekanju'">	
                                         <button (click) = "onSubmit(item)" class="btn float-none login_btn"> Accept</button>
+                                        <button (click) = "decline(item)" class="btn float-none login_btn"> Decline</button>
                                 </div>
                         </div>
                 </div>

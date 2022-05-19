@@ -2,62 +2,9 @@
 <br>
 <br>
 <br>
-<ul>
-    <li *ngFor="let item of prikaz">
-        <div class="float-container">
-            <br>
-            <div class="container">
-                <div class="d-flex justify-content-center h-100">
-                    <div class="card">
-                            <div class="card-body">
-                                    <div class="input-group form-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"> Hrana </span>
-                                        </div>
-                                        <span class="input-group-text"> {{item.articles}} </span>
-                                    </div>
-                                    <div class="input-group form-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"> Kolicina </span>
-                                        </div>
-                                        <span class="input-group-text"> {{item.comment}} </span>
-                                    </div>
-                                    <div class="input-group form-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"> Adresa </span>
-                                        </div>
-                                        <span class="input-group-text"> {{item.adress}} </span>
-                                    </div>
-                                    <div class="input-group form-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"> Cijena </span>
-                                        </div>
-                                        <span class="input-group-text"  > {{item.price}} </span>
-                                    </div>
-                                    <div class="input-group form-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"> Komentar </span>
-                                        </div>
-                                        <span class="input-group-text"  > {{item.comment}} </span>
-                                    </div>
-                                    <div class="input-group form-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"> Status </span>
-                                        </div>
-                                        <span class="input-group-text"  > {{item.status}} </span>
-                                    </div>
-                                    <div class="input-group form-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"> Vrijeme </span>
-                                        </div>
-                                        <span class="input-group-text"  >
-                                            <app-brojcanik [childMessage]=item.deliveryTime></app-brojcanik>    
-                                        </span>
-                                    </div>
-                            </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-</ul>
+<br>
+<br>
+<br>
+<p *ngIf="korisnik.status == 'Odbijen'"> ZAHTJEV ZA VERIFIKACIJU JE ODBIJEN </p>
+<p *ngIf="korisnik.status == 'Aktivan'"> ZAHTJEV ZA VERIFIKACIJU JE ODOBREN </p>
+<p *ngIf="korisnik.status == 'Na cekanju'"> ZAHTJEV ZA VERIFIKACIJU SE PROCESIRA </p>

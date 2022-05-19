@@ -16,7 +16,7 @@ export class MojePorudzbineComponent implements OnInit {
   constructor(private router: Router,private service: PorudzbinaService) {}
 
   ngOnInit(): void {
-    this.service.getPorudzbineKorisnika(2).subscribe(
+    this.service.getPorudzbineKorisnika(Number(localStorage.getItem('id'))).subscribe(
       (data:Porudzbina[]) =>{
         this.Lista = data;
      }

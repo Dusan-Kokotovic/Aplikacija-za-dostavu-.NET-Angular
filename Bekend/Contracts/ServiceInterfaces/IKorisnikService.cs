@@ -9,5 +9,7 @@ namespace Contracts.ServiceInterfaces
 {
     public interface IKorisnikService : ICrudInterface<KorisnikDto>
     {
+        KorisnikDto Login(KorisnikDto korisnik);
+        KorisnikDto Prihvati(int id);
     }
 }

@@ -25,4 +25,21 @@ export class KorisnikService {
   addKorisnik(registration:Registration) : Observable<Registration> {
     return this.http.post<Registration>(environment.serverURL + '/api/Korisnik/',registration);
   }
+
+  sendMail(mail:string) : Observable<Registration> {
+    return this.http.get<Registration>(environment.serverURL + '/api/Korisnik/Mail/'+mail);
+  }
+
+  Login(register:Registration) : Observable<Registration> {
+    return this.http.post<Registration>(environment.serverURL + '/api/Korisnik/Login',register);
+  }
+
+  PrihvatiPorudzbinu(Id:Number) : Observable<Registration> {
+    return this.http.get<Registration>(environment.serverURL + '/api/Korisnik/Prihvati/'+Id);
+  }
+
+  getToken(){
+    return localStorage.getItem('token');
+  }
+
 }

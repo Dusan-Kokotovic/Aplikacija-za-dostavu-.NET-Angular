@@ -10,10 +10,11 @@ import { environment } from 'src/environments/environment';
 export class JeloService {
   constructor(private http: HttpClient) { }
 
-  getJela() : Observable<Jelo[]> {
+  getJela(token:string) : Observable<Jelo[]> {
+
     return this.http.get<Jelo[]>(environment.serverURL + '/api/Jelo');
   }
-  dodajJelo(jelo:Jelo) :Observable<Jelo> {
+  dodajJelo(jelo:Jelo,token:string) :Observable<Jelo> {
     return this.http.post<Jelo>(environment.serverURL + '/api/Jelo', jelo);
   }
 

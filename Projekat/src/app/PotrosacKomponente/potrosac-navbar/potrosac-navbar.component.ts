@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-potrosac-navbar',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PotrosacNavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
+  }
+
+  Logout(){
+    console.log("URAAAAAAAAAAA");
+    localStorage.setItem('id',"");
+    localStorage.setItem('token',"");
+    localStorage.setItem('role',"");
+    this.router.navigateByUrl('/login');
   }
 
 }

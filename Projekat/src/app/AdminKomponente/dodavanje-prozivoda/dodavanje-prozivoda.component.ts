@@ -22,19 +22,19 @@ export class DodavanjeProzivodaComponent implements OnInit {
   });
 
   Lista : Jelo[] = []
-
+  token : string = String(localStorage.getItem('token'));
 
   constructor(private router: Router,private service: JeloService) { }
 
   ngOnInit(): void {
-    this.service.getJela().subscribe(
+    this.service.getJela(this.token).subscribe(
       (data:Jelo[]) =>{
          this.Lista = data;
       }
     )
   }
 
-
+  
   onSubmit(){
     console.log(this.Lista);
     if(this.jeloForm.valid){
@@ -43,8 +43,7 @@ export class DodavanjeProzivodaComponent implements OnInit {
     novo.sastojci = this.jeloForm.controls["dishes"].value;
     novo.cijena = this.jeloForm.controls["price"].value;
     this.Lista.push(novo);
-
-    this.service.dodajJelo(novo).subscribe(
+    this.service.dodajJelo(novo,this.token).subscribe(
       (data:Jelo) =>{
         // this.Lista = data;
       }
