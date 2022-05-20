@@ -58,6 +58,7 @@ namespace BusinessLayer
             {
                 return null;
             }
+            newModel.Password = BCrypt.Net.BCrypt.HashPassword(newModel.Password);
             return MapKorisnikDto(_repository.Update(id, MapKorisnik(newModel)));
 
         }
